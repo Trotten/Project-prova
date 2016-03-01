@@ -1,5 +1,5 @@
 ciao, sto provando a creare un file!
 
 
-io modifico in internet
+io modifico da terminale
 
