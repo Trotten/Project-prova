@@ -1,0 +1,59 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red26\green27\blue29;\red234\green234\blue234;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 git init\
+git clone\
+\
+CONFLITTO\
+git add .\
+git commit -m \'93commit\'94\
+git push {\field{\*\fldinst{HYPERLINK "https://github.com/Trotten/Project-prova"}}{\fldrslt https://github.com/Trotten/Project-prova}} master	//errore\
+git pull {\field{\*\fldinst{HYPERLINK "https://github.com/Trotten/Project-prova"}}{\fldrslt https://github.com/Trotten/Project-prova}} master	//fa il merge dei \
+git add .\
+git commit -m \'93proviamo cos\'ec\'94\
+git push {\field{\*\fldinst{HYPERLINK "https://github.com/Trotten/Project-prova"}}{\fldrslt https://github.com/Trotten/Project-prova}} master\
+\
+\
+\
+ALTERNATIVA CONFLITTO\
+git add .\
+git commit -m \'93commit\'94\
+git push {\field{\*\fldinst{HYPERLINK "https://github.com/Trotten/Project-prova"}}{\fldrslt https://github.com/Trotten/Project-prova}} master\
+//creiamo un nuovo branch\
+git checkout -b nuovo_branch\
+git push {\field{\*\fldinst{HYPERLINK "https://github.com/Trotten/Project-prova"}}{\fldrslt https://github.com/Trotten/Project-prova}} nuovo_branch\
+git checkout master\
+//git add .\
+//git commit -m \'93commit\'94\
+git pull https://github.com/Trotten/Project-prova.git master\
+//risolvo conflitto\
+git add .\
+git commit -m \'93commit1\'94\
+git push https://github.com/Trotten/Project-prova.git master\
+\
+\
+RICREARE BACKUP\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f1\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+git reset --hard HEAD~1	//cancella in locale l\'92ultimo commit\
+git log	//vedo tutti i commit\
+git reset --hard <commit-id>	//cancella tutti i commit fino al commit-id\
+git push origin HEAD --force	//pusha su github in maniera forzata, cancellando tutti i commit successivi. Ho eliminato questa opzione dalla nostra repository per sicurezza\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+CREARE BRANCH NUOVI CON UN PUSH\
+git push -u repository nome_branch\
+\
+SETTARE ORIGIN\
+Si pu\'f2 settare l\'92origin per fare in modo di non inserire ogni volta il link della repository.\
+git remote				vedo tutti gli origin\
+git remote add nome_origin link_repository	associo al nome_origin il link della repository\
+git remote remove nome_origin				nel caso volessi cancellare qualche origin}
