@@ -10,7 +10,9 @@
 
 
 
-void *gestorenumeroprocessifiglidisponibili(void *arg){			//thread per gestire il numero di 										//processi figli contemporaneamente 										//disponibili nel sistema
+void *gestorenumeroprocessifiglidisponibili(void *arg){			//thread per gestire il numero di 	
+									//processi figli contemporaneamente
+									//disponibili nel sistema
 	
 	struct datipernuoviproc *dati=arg;
 	struct procinfo **pro=dati->procini;
@@ -33,19 +35,19 @@ void *gestorenumeroprocessifiglidisponibili(void *arg){			//thread per gestire i
 	while(1){
 	
 		appoggio=*pro;
-		liberi=0;
+		liberi=1;
 		while(appoggio->next!=NULL)
 			{
 				liberi++;
 				appoggio=appoggio->next;
 
 			}
-		while(liberi<PROCLIBERIMIN-1)
+		while(liberi<PROCLIBERIMIN)
 			{
 				aggiungiprocesso(*pro,creaprocesso(dati->listens));
 				liberi++;
 			}
-		while(liberi>PROCLIBERIMAX-1)
+		while(liberi>PROCLIBERIMAX)
 			{
 			
 					//da inseire il controllo su tutti i processi in esecuzione ed eliminarne quelli liberi fino ad averne in esecuzione un numero < di PROCLIBERIMAX

@@ -67,19 +67,19 @@ void *lavorothreadfigli(void *arg){
 		//snprintf(buff, sizeof(buff), "%.24s\r\n","ciaoooooooooooo\n");
 
 
-	if (write(connsd,buff,strlen(buff))<0) {
-      perror("errore in write"); 
-      exit(1);
-    }
+		if (write(connsd,buff,strlen(buff))<0) {
+      			perror("errore in write"); 
+      			exit(1);
+    		}
 
 
-	printf("write\n");
+		printf("write\n");
 
- if (close(connsd) == -1) {  		// chiude la connessione 
-      perror("errore in close");
-      exit(1);
-    }	
-	printf("close\n");
+		if (close(connsd) == -1) {  		// chiude la connessione 
+      			perror("errore in close");
+      			exit(1);
+    		}	
+		printf("close\n");
 
 	
 			//lavoro thread per gestire una richiesta	

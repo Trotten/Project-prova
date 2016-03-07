@@ -10,7 +10,8 @@
 
 
 
-struct procinfo *alloc_node()				//funzione per allocare un nuovo nodo della struttura 								//procinfo e creare le pipe necessarie
+struct procinfo *alloc_node()				//funzione per allocare un nuovo nodo della struttura
+							//procinfo e creare le pipe necessarie
 {
     struct procinfo *p = malloc(sizeof(struct procinfo));
     if (p == NULL) {
@@ -83,7 +84,9 @@ void creathreadpergestionepipefiglio(struct procinfo *data){			//funzione per la
 
 
 struct procinfo * creaprocesso(int daacc){				
-								//funzione per la creazione di un nuovo 								//processo figlio, chiusura delle pipe non 									//necessarie nel processo principale e 
+								//funzione per la creazione di un nuovo 
+								//processo figlio, chiusura delle pipe non
+ 								//necessarie nel processo principale e 
 								//creazione del thread in ascolto
 	struct procinfo *procfiglio=alloc_node();
 	struct datiprocfiglio *datifiglio=malloc(sizeof(struct datiprocfiglio));
